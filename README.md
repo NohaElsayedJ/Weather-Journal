@@ -1,4 +1,8 @@
-# Weather-Journal## Table of Contents
+# Weather-Journal
+
+The second project of front-end professional track
+
+## Table of Contents
 
   * [Project-description](#Project-description)
   * [Usage](#Usage)

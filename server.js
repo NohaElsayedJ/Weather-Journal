@@ -1,4 +1,4 @@
-projectData = [];
+projectData = {};
 
 // Require Express to run server and routes
 const express= require('express')
@@ -27,6 +27,16 @@ const server = app.listen(port, ()=>{
 
 
 
+app.post('/saveDate', f)
+function f( req , res ){
+
+    projectData['Date']= req.body.date;
+    projectData['Temperature'] = req.body.Temperature;
+    projectData['Sentiment'] = req.body.Sentiment;
+
+    console.log(projectData)
+}
+
 
 
  app.get('/getData' , a)
@@ -34,8 +44,7 @@ const server = app.listen(port, ()=>{
 res.send(projectData);
 }
 
-
-;
+/*
 app.post('/saveDate', f)
 function f( req , res ){
    
@@ -50,4 +59,4 @@ function f( req , res ){
     console.log(projectData)
    // console.log(projectData);
 
-}
+}*/

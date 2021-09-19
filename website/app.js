@@ -1,7 +1,7 @@
 let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+let newDate = d.getMonth()+1 +'.'+ d.getDate()+'.'+ d.getFullYear();
 
-let keyApi = '252ee05c2cad838bdfab15d3466c0d6a';
+let keyApi = '252ee05c2cad838bdfab15d3466c0d6a&units=metric';
 const generate = document.getElementById('generate');
  
 
@@ -18,11 +18,12 @@ function per(e){
    
      getWeather('/getData')
     .then(function(data){
-     // console.log(data);
-     // console.log(feelings);
+      console.log(data);
+      console.log(feelings);
       postData('/saveDate', {date : newDate, Temperature:data, Sentiment: feelings })
     })
-        updateUI() 
+       .then(()=>
+        updateUI())
     
 }
 
@@ -68,7 +69,7 @@ const postData = async ( url = '', data = {})=>{
     const request = await fetch('/getData');
     try{
       const allData = await request.json();
-     //console.log(allData)
+     console.log(allData)
       document.getElementById('date').innerHTML = allData.Date;
       document.getElementById('temp').innerHTML = allData.Temperature+' °C';
       document.getElementById('content').innerHTML = allData.Sentiment;

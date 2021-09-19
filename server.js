@@ -1,3 +1,4 @@
+// Setup empty JS object to act as endpoint for all routes
 projectData = {};
 
 // Require Express to run server and routes
@@ -44,19 +45,8 @@ function f( req , res ){
 res.send(projectData);
 }
 
-/*
-app.post('/saveDate', f)
-function f( req , res ){
-   
-    const data = req.body;
-    newEntry= {
-        date : data.date,
-        Temperature : data.Temperature,
-        sentiment : data.sentiment
-    }
-    projectData.push(newEntry)
-    res.send(projectData);
-    console.log(projectData)
-   // console.log(projectData);
 
-}*/
+
+
+
+
